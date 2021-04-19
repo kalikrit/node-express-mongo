@@ -7,6 +7,31 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.post('/', (req, res, next) => {
+    const user = {
+        name: req.body.name,
+        age: req.body.age
+    };
+    res.status(200).json({
+        message: 'POST request to / users',
+        user: user
+    });
+});
+
+router.patch('/:userID', (req, res, next) => {
+    const id = req.params.userID;
+    res.status(200).json({
+        message: `user ${id} has been updated`
+    });
+});
+
+router.delete('/:userID', (req, res, next) => {
+    const id = req.params.userID;
+    res.status(200).json({
+        message: `user ${id} has been deleted`
+    });
+});
+
 router.get('/:userID', (req, res, next) => {
     const id = req.params.userID;
     if (id === 'admin') {

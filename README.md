@@ -1,1 +1,3 @@
-сервер Node.js + Express, MongoDB + Mongoose
+#сервер Node.js + Express, MongoDB + Mongoose
+
+npm start - starts nodemon server
